@@ -30,7 +30,7 @@
 
   <groupId>org.apache.velocity.tools</groupId>
   <artifactId>velocity-tools-parent</artifactId>
-  <version>3.3-SNAPSHOT</version>
+  <version>4.0</version>
   <packaging>pom</packaging>
 
   <name>VelocityTools</name>
@@ -123,6 +123,12 @@
     </contributor>
   </contributors>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -158,19 +164,19 @@
         <version>${slf4j.version}</version>
       </dependency>
       <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>3.1.0</version>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>5.0.0</version>
       </dependency>
       <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>javax.servlet.jsp-api</artifactId>
-        <version>2.3.3</version>
-      </dependency>
-      <dependency>
-        <groupId>javax.el</groupId>
-        <artifactId>javax.el-api</artifactId>
+        <groupId>jakarta.servlet.jsp</groupId>
+        <artifactId>jakarta.servlet.jsp-api</artifactId>
         <version>3.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.el</groupId>
+        <artifactId>jakarta.el-api</artifactId>
+        <version>4.0.0</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -227,6 +233,17 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.7.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
       </plugin>
     </plugins>
   </build>
