@@ -124,11 +124,12 @@
   </contributors>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
+	<repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/sandeepdhankhar/velocity-tools</url>
+    </repository>  
+</distributionManagement>
   <dependencyManagement>
     <dependencies>
       <dependency>
