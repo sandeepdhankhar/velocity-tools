@@ -55,16 +55,6 @@
     <module>velocity-tools-examples</module>
   </modules>
 
-  <scm>
-    <connection>scm:git:https://gitbox.apache.org/repos/asf/velocity-tools.git</connection>
-    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/velocity-tools.git</developerConnection>
-    <url>https://gitbox.apache.org/repos/asf?p=velocity-tools.git</url>
-    <tag>HEAD</tag>
-  </scm>
-  <issueManagement>
-    <system>jira</system>
-    <url>https://issues.apache.org/jira/browse/VELTOOLS</url>
-  </issueManagement>
 
   <!-- This project is an effort by many people. If you feel that your name
      should be in here and has been omitted in error, please open an issue with
@@ -234,17 +224,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.7.0</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
-        </configuration>
       </plugin>
     </plugins>
   </build>
